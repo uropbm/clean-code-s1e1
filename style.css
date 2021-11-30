@@ -21,9 +21,11 @@
 }
 
 @media (max-width:768px) {
+
   .header-container { 
     text-align: center;
   }
+  
 }
 
 .centered-container {
@@ -167,19 +169,9 @@
   color: #888;
 }
 
-/* Edit Task */
-/* ul li input[type="text"] {
-  display: none
-} */
-
 .text {
   display: none;
 }
-
-/* .edit-mode input[type=text] {
-  display: inline-block;
-  width: 224px;
-}  */
 
 .edit-mode .text {
   display: inline-block;
