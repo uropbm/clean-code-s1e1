@@ -37,7 +37,7 @@ var createNewTaskElement = function(taskString){
     label.classList.add('lable');
 
     //Each elements, needs appending
-    listItem.classList.add('li');
+    listItem.classList.add('current-task__li');
     checkBox.type = "checkbox";
     checkBox.classList.add('input');
     editInput.type = "text";
@@ -91,7 +91,7 @@ var editTask = function(){
     var editInput = listItem.querySelector('input[type=text]');
     var label = listItem.querySelector("label");
     var editBtn = listItem.querySelector(".edit");
-    var containsClass = listItem.classList.contains("edit-mode");
+    var containsClass = listItem.classList.contains("current-task__li_edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -105,7 +105,7 @@ var editTask = function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("current-task__li_edit-mode");
 };
 
 
@@ -129,7 +129,8 @@ var taskCompleted = function(){
     var listItem = this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-
+    listItem.classList.remove('current-task__li');
+    listItem.classList.add('complite-task__li');
 }
 
 
@@ -141,6 +142,8 @@ var taskIncomplete = function(){
     var listItem = this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
+    listItem.classList.add('current-task__li');
+    listItem.classList.remove('complite-task__li');
 }
 
 
