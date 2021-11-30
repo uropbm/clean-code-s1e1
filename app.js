@@ -195,7 +195,7 @@ for (var i = 0; i<completedTasksHolder.children.length;i++){
 }
 
 
-
+console.log('re-open');
 
 // Issues with usability don't get seen until they are in front of a human tester.
 
